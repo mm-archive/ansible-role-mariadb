@@ -1,0 +1,4 @@
+---
+# file: maraidb/defaults/main.yml
+
+mysql_root_db_pass: CHANGEME
