@@ -1,0 +1,4 @@
+---
+# file: mariadb/meta/main.yml
+
+version: 1.0.0
