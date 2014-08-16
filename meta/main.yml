@@ -2,3 +2,16 @@
 # file: mariadb/meta/main.yml
 
 version: 1.0.0
+galaxy_info:
+  author: Matthew Miller
+  description: A role to install mariadb
+  company:
+  license: license (MIT)
+  min_ansible_version: 1.6
+  platforms:
+    - name: Ubuntu
+      versions:
+        - trusty
+  categories:
+    - database:sql
+dependencies: []
