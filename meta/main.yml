@@ -1,7 +1,7 @@
 ---
 # file: mariadb/meta/main.yml
 
-version: 1.0.0
+version: 1.0.1
 galaxy_info:
   author: Matthew Miller
   description: A role to install mariadb
