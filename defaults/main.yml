@@ -1,4 +1,5 @@
 ---
 # file: maraidb/defaults/main.yml
 
-mysql_root_db_pass: CHANGEME
+mysql_dir_credentials: "{{ inventory_dir }}/_private/credentials"
+mysql_root_db_pass: "{{ lookup('password', mysql_dir_credentials + '/'+ item.domain'.db_password length=65') }}"
