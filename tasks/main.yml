@@ -44,8 +44,8 @@
 - name: Update mysql root password for all root accounts
   mysql_user: >
     name=root
-    host={{ item }}
-    password="{{ mysql_root_db_pass | lookup('password', mysql_dir_credentials + '/'+ item.domain'.db_password length=65') }}"
+    host="{{ item }}"
+    password="{{ mysql_root_db_pass }}"
     state=present
   with_items:
    - 127.0.0.1
