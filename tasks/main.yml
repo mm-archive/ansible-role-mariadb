@@ -9,12 +9,16 @@
     - mariadb-server
     - mariadb-client
     - python-mysqldb
+  tags:
+    - mariadb
 
 - name: Start MySQL server
   service: >
     name=mysql
     state=started
     enabled=true
+  tags:
+    - mariadb
 
 - name: Delete unneeded users
   action: >
@@ -32,14 +36,18 @@
       # {{ ansible_fqdn }} and {{ ansible_hostname}}
       # might not return the correct value make sure
       # all users are correct and have a password.
+  tags:
+    - mariadb
 
 - name: Delete anonymous MySQL server user for localhost
   action: mysql_user user='' state=absent
+  tags:
+    - mariadb
 
 - name: Remove the test database
   mysql_db: name=test state=absent
-
-
+  tags:
+    - mariadb
 
 - name: Update mysql root password for all root accounts
   mysql_user: >
@@ -51,6 +59,10 @@
    - 127.0.0.1
    - ::1
    - localhost
+  tags:
+    - mariadb
 
 - name: Create .my.cnf for root
   template: src=.my.cnf dest=/root/.my.cnf
+  tags:
+    - mariadb

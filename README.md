@@ -14,7 +14,7 @@ A role to setup mariadb (MySql Alt)
 
     - hosts: servers
       roles:
-         - { role: MatthewMi11er.mariadb}
+         - MatthewMi11er.mariadb
 
 ## License
 
